@@ -1,0 +1,205 @@
+⭐ 1. What is Bancor?
+
+Bancor is one of the first AMMs ever created (before Uniswap v2).
+It introduced the concept of:
+
+✔️ Smart tokens
+✔️ Single-sided liquidity
+✔️ Impermanent Loss Protection
+✔️ Protocol-owned insurance fund
+✔️ Use of a network token (BNT) as a middle asset
+
+⭐ 2. The Key Feature: “Single-Sided Liquidity”
+
+In Uniswap, LP must deposit:
+
+✔️ 2 tokens
+✔️ In equal value
+❌ Always exposed to IL
+
+But in Bancor, an LP can provide JUST ONE TOKEN.
+
+Examples:
+
+Provide only ETH
+
+Provide only LINK
+
+Provide only USDT
+
+You don’t need the pair.
+
+This already reduces IL dramatically because you’re not forced to hold 50% of the opposite asset.
+
+⭐ 3. How Does Bancor Allow Single-Sided Liquidity?
+
+Because every pool always contains BNT, Bancor’s native token.
+
+Example Bancor pools:
+
+ETH/BNT
+
+LINK/BNT
+
+USDC/BNT
+
+When you deposit only ETH:
+
+Bancor mints BNT on the other side
+
+Balances the pool
+
+Allows swaps like:
+
+ETH ↔ BNT
+
+BNT ↔ LINK
+
+ETH ↔ LINK (via BNT routing)
+
+Because of this mechanism, Bancor pools always remain balanced.
+
+⭐ 4. How Bancor Solves Impermanent Loss (IL Protection)
+
+Bancor introduced IL Protection:
+
+🟢 What It Means
+
+Bancor promised LPs:
+
+“You will NEVER suffer impermanent loss.
+If your position is in loss, we will compensate it using protocol revenue + BNT.”
+
+How they did this:
+
+✔️ 4.1 The Protocol tracks each LP position
+
+It tracks:
+
+How much ETH you supplied
+
+What it is worth now
+
+Whether IL occurred
+
+✔️ 4.2 If IL happened, Bancor compensates you in BNT
+
+For example:
+
+You deposit 10 ETH.
+Months later, because of AMM rebalancing:
+
+You withdraw 9.2 ETH + some BNT value
+
+Total value < what you would get by simply holding ETH
+
+So Bancor calculates the IL and gives you free BNT that fills the gap.
+
+Thus:
+
+Your withdrawal value = your HODL value
+
+Impermanent loss = 0
+
+This is how they claimed to eliminate impermanent loss.
+
+⭐ 5. The Catch: IL Protection Was Not Immediate
+
+In Bancor V2.1:
+
+Day 0: 0% IL protection
+
+After 30 days: ~30% IL protection
+
+After 100 days: ~100% IL protection
+
+So:
+
+The longer your money stayed,
+
+The more IL protection you received.
+
+This encouraged long-term LPing.
+
+⭐ 6. How the Protection Was Funded
+
+This is extremely important.
+
+Bancor funded the IL protection from:
+
+Protocol fees
+
+Traders paid fees
+
+Fees were used to cover IL
+
+Minting BNT
+
+When needed, Bancor minted new BNT
+
+Used it to offset IL
+
+So IL was not magically removed —
+it was socialized across the protocol.
+
+⭐ 7. Did Bancor really eliminate IL?
+📌 Answer: It covered IL using protocol funds,
+
+not removed IL mathematically.
+
+Price divergence still happened in pools.
+LPs would still suffer IL inside AMM math.
+
+But Bancor compensated them financially,
+so the LP never “felt” the loss.
+
+This is like:
+
+Insurance doesn't remove the accident,
+it just pays for the damage.
+
+Same idea.
+
+⭐ 8. Why Bancor IL Protection Failed in 2022
+
+During extreme market crashes:
+
+Too many LPs suffered IL
+
+Bancor had to mint huge amounts of BNT to compensate
+
+BNT price fell
+
+Insurance fund collapsed
+
+Bancor halted IL protection
+
+So the model broke under stress.
+
+Because it relied on:
+
+BNT price
+
+Protocol fees
+
+Insurance treasury
+
+This was not sustainable in a bear market.
+
+⭐ 9. Summary: How Bancor Removes IL (In Theory)
+Mechanism	Explanation
+Single-sided liquidity	LP not forced into 50/50 exposure → lower IL
+BNT co-investment	Bancor funds the other side, not the LP
+IL Tracking	Protocol continuously tracks impermanent loss
+IL Insurance	Bancor mints BNT to cover LP’s losses
+Fee Sharing	Trading fees used for insurance funding
+⭐ 10. Final Answer (Interview Level)
+
+Does Bancor remove impermanent loss?
+
+Bancor does not mathematically remove impermanent loss.
+The AMM still causes IL whenever prices diverge.
+Bancor simply insures LPs against IL by minting BNT and using protocol fees.
+This makes LPs whole at withdrawal time, effectively “removing” IL from their perspective — although the protocol absorbs the loss.
+
+Perfect, clean and accurate explanation.
