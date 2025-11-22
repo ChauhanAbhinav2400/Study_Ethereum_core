@@ -1,0 +1,20 @@
+node modules/
+.env
+.DS_Store
+__pycache__/
+.vscode/
+.idea/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+*.sqlite
+*.env
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pytest_cache/
+.coverage
+htmlcov/
